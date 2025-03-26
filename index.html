@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PubertX - Education on Puberty and Mental Health</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="PubertX Logo" />
+      <h1>PubertX</h1>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#learning" class="nav-link active">Learn</a>
+      <a href="diskusija.html" class="nav-link">Discuss</a>
+      <a href="chatbot.html" class="nav-link">PubertX AI</a>
+    </div>
+    
+    <div class="user-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="user-icon">A</div>
+    </div>
+  </nav>
+  
+  <div class="main-content">
+    <div class="hero">
+      <h2>Grow with Confidence</h2>
+      <p>PubertX provides youth with support and education on puberty, sexual, and mental health in a safe, non-judgmental space.</p>
+      <a href="#learning" class="button">Start the Journey</a>
+    </div>
+    
+    <div class="content-switcher">
+      <button class="switch-btn active" data-content="modules">Lessons</button>
+      <button class="switch-btn" data-content="quiz">Test Your Knowledge</button>
+    </div>
+
+    <div id="modules-content" class="content-section active">
+      <div class="tabs">
+        <div class="tab active" data-tab="learning">Module 1</div>
+        <div class="tab" data-tab="discussion">Module 2</div>
+        <div class="tab" data-tab="chatbot">Module 3</div>
+      </div>
+      
+      <div id="learning" class="tab-content active">
+        <div class="learning-path" id="lessons-section">
+          <div class="path-level">
+            <div class="lesson completed">
+              1
+              <div class="lesson-tooltip">Introduction to Puberty</div>
+            </div>
+            <div class="lesson current">
+              2
+              <div class="lesson-tooltip">Body Changes</div>
+            </div>
+            <div class="lesson locked">
+              3
+              <div class="lesson-tooltip">Emotional Changes</div>
+            </div>
+          </div>
+          
+          <div class="path-level">
+            <div class="lesson locked">
+              4
+              <div class="lesson-tooltip">Healthy Relationships</div>
+            </div>
+            <div class="lesson locked">
+              5
+              <div class="lesson-tooltip">Consent and Boundaries</div>
+            </div>
+            <div class="lesson locked">
+              6
+              <div class="lesson-tooltip">Mental Health</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lesson-container">
+          <div class="lesson-progress">
+              <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+              </div>
+              <div class="progress-stats">
+                  <span>Lesson 2/6</span>
+                  <span>45% completed</span>
+              </div>
+          </div>
+
+          <div class="lesson-content">
+              <div class="lesson-header">
+                  <h1>Body Changes</h1>
+                  <p class="lesson-subtitle">Understanding Physical Changes during Puberty</p>
+              </div>
+
+              <div class="lesson-illustration">
+                  <img src="lekcija.png" alt="Illustration of Puberty Changes">
+              </div>
+
+              <div class="lesson-text">
+                  <h2>What is Puberty?</h2>
+                  <p>Puberty is a natural phase of growth when your body undergoes significant changes. It is the period when the body transitions from childhood to adulthood.</p>
+                  
+                  <div class="info-box">
+                      <div class="info-icon">
+                          <i class="fas fa-lightbulb"></i>
+                      </div>
+                      <div class="info-content">
+                          <h3>Did you know?</h3>
+                          <p>Puberty typically starts between ages 8 and 13 for girls, and between ages 9 and 14 for boys.</p>
+                      </div>
+                  </div>
+
+                  <div class="interactive-section">
+                      <h3>Main Changes during Puberty</h3>
+                      <div class="changes-grid">
+                          <div class="change-card">
+                              <i class="fas fa-arrow-up"></i>
+                              <h4>Growth</h4>
+                              <p>Rapid growth in height and weight</p>
+                          </div>
+                          <div class="change-card">
+                              <i class="fas fa-brain"></i>
+                              <h4>Emotions</h4>
+                              <p>Intensified emotions</p>
+                          </div>
+                          <div class="change-card">
+                              <i class="fas fa-user"></i>
+                              <h4>Body</h4>
+                              <p>Physical changes</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="lesson-navigation">
+                      <button class="nav-button prev">
+                          <i class="fas fa-arrow-left"></i>
+                          Previous Lesson
+                      </button>
+                      <button class="nav-button next">
+                          Next Lesson
+                          <i class="fas fa-arrow-right"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="discussion" class="tab-content">
+        <div class="coming-soon">
+          <div class="coming-soon-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2>Coming Soon!</h2>
+          <p>We're working on something amazing! Stay tuned for interactive discussions and AI-powered learning experiences. 🚀</p>
+          <div class="coming-soon-features">
+            <div class="feature">
+              <i class="fas fa-comments"></i>
+              <span>Interactive Discussions</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-robot"></i>
+              <span>AI Assistant</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-brain"></i>
+              <span>Smart Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="chatbot" class="tab-content">
+        <div class="coming-soon">
+          <div class="coming-soon-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2>Coming Soon!</h2>
+          <p>We're working on something amazing! Stay tuned for interactive discussions and AI-powered learning experiences. 🚀</p>
+          <div class="coming-soon-features">
+            <div class="feature">
+              <i class="fas fa-comments"></i>
+              <span>Interactive Discussions</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-robot"></i>
+              <span>AI Assistant</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-brain"></i>
+              <span>Smart Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-content" class="content-section">
+      <div class="quiz-container">
+        <div class="quiz-map">
+          <div class="quiz-module">
+            <h3>Module 1: Understanding Puberty</h3>
+            <div class="quiz-levels">
+              <div class="quiz-level completed">
+                <div class="level-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 1</h4>
+                  <p>Basic Concepts</p>
+                  <span>5 questions</span>
+                </div>
+              </div>
+              <div class="quiz-level current">
+                <div class="level-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 2</h4>
+                  <p>Body Changes</p>
+                  <span>8 questions</span>
+                </div>
+                <button class="play-button">
+                  <i class="fas fa-play"></i>
+                  Play
+                </button>
+              </div>
+              <div class="quiz-level locked">
+                <div class="level-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 3</h4>
+                  <p>Emotional Changes</p>
+                  <span>10 questions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-module">
+            <h3>Module 2: Relationships & Health</h3>
+            <div class="quiz-levels">
+              <div class="quiz-level locked">
+                <div class="level-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 1</h4>
+                  <p>Healthy Relationships</p>
+                  <span>7 questions</span>
+                </div>
+              </div>
+              <div class="quiz-level locked">
+                <div class="level-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 2</h4>
+                  <p>Consent & Boundaries</p>
+                  <span>9 questions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-module">
+            <h3>Module 3: Mental Health</h3>
+            <div class="quiz-levels">
+              <div class="quiz-level locked">
+                <div class="level-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 1</h4>
+                  <p>Understanding Emotions</p>
+                  <span>6 questions</span>
+                </div>
+              </div>
+              <div class="quiz-level locked">
+                <div class="level-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="level-info">
+                  <h4>Level 2</h4>
+                  <p>Self-Care & Support</p>
+                  <span>8 questions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming Soon Modal -->
+  <div id="comingSoonModal" class="modal">
+    <div class="modal-content">
+      <div class="coming-soon-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Coming Soon!</h2>
+      <p>This feature will be available soon. Stay tuned for more information! 🚀</p>
+      <button class="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Coming Soon Modal Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('comingSoonModal');
+      const modalClose = document.querySelector('.modal-close');
+      const chatInput = document.getElementById('chat-input');
+      const emojiTrigger = document.getElementById('emoji-trigger');
+
+      function showModal(event) {
+        event.preventDefault();
+        modal.style.display = 'flex';
+      }
+
+      function hideModal() {
+        modal.style.display = 'none';
+      }
+
+      chatInput.addEventListener('click', showModal);
+      emojiTrigger.addEventListener('click', showModal);
+      modalClose.addEventListener('click', hideModal);
+
+      // Close modal if clicked outside
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          hideModal();
+        }
+      });
+    });
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+</html>

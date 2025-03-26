@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - PubertX</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="PubertX Logo" />
+      <h1>PubertX</h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Learn</a>
+      <a href="diskusija.html" class="nav-link">Discuss</a>
+      <a href="chatbot.html" class="nav-link active">PubertX AI</a>
+    </div>
+    <div class="user-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="user-icon">A</div>
+    </div>
+  </nav>
+
+  <div class="chatbot-wrapper">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar">
+        <img src="logo.png" alt="PubertX Bot" style="width: 40px; height: 20px;" onerror="this.src='https://via.placeholder.com/50'">
+      </div>
+      <div class="chatbot-info">
+        <h2>PubertX Assistant</h2>
+        <p class="status online">Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-messages">
+        <div class="message bot">
+          <div class="message-content">
+            <p>Hello! 👋 I'm the PubertX Assistant. This feature is coming soon!</p>
+            <span class="message-time">14:00</span>
+          </div>
+        </div>
+        <div class="message user">
+          <div class="message-content">
+            <p>Hello! I have some questions about puberty...</p>
+            <span class="message-time">14:01</span>
+          </div>
+        </div>
+        <div class="message bot">
+          <div class="message-content">
+            <p>Thanks for your message! 🚧 This interactive feature is coming soon. We're working hard to provide you with the best support. Stay tuned! 🛠️</p>
+            <span class="message-time">14:01</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <div class="input-wrapper">
+          <button class="emoji-button" id="emoji-trigger">
+            <i class="far fa-smile"></i>
+          </button>
+          <input type="text" placeholder="Feature coming soon..." id="chat-input">
+          <button class="send-button" disabled>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming Soon Modal -->
+  <div id="comingSoonModal" class="modal">
+    <div class="modal-content">
+      <div class="coming-soon-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Coming Soon!</h2>
+      <p>This feature will be available soon. Stay tuned for more information! 🚀</p>
+      <button class="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Coming Soon Modal Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('comingSoonModal');
+      const modalClose = document.querySelector('.modal-close');
+      const chatInput = document.getElementById('chat-input');
+      const emojiTrigger = document.getElementById('emoji-trigger');
+
+      function showModal(event) {
+        event.preventDefault();
+        modal.style.display = 'flex';
+      }
+
+      function hideModal() {
+        modal.style.display = 'none';
+      }
+
+      chatInput.addEventListener('click', showModal);
+      emojiTrigger.addEventListener('click', showModal);
+      modalClose.addEventListener('click', hideModal);
+
+      // Close modal if clicked outside
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          hideModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

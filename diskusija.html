@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussions - PubertX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="PubertX Logo" />
+            <h1>PubertX</h1>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" onclick="handleNavigation(event)">Learn</a>
+            <a href="discussion.html" class="nav-link active">Discuss</a>
+            <a href="chatbot.html" class="nav-link">PubertX AI</a>
+        </div>
+        
+        <div class="user-actions">
+            <div class="search-box">
+                <input type="text" placeholder="Search..." />
+            </div>
+            <div class="user-icon">A</div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="discussion-header">
+            <h2>Conversation and Support</h2>
+            <p>Connect with others and share your experiences</p>
+        </div>
+
+        <div class="discussion-container">
+            <div class="discussion-card">
+                <div class="discussion-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="discussion-title">Discussion Forum</h3>
+                <p class="discussion-text">Connect with others going through similar experiences. Share your thoughts, questions, and advice.</p>
+                <a href="#" class="discussion-button">Join the Forum</a>
+            </div>
+
+            <div class="discussion-card">
+                <div class="discussion-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3 class="discussion-title">Support Groups</h3>
+                <p class="discussion-text">Join a support group where you can talk with others who understand your experience.</p>
+                <a href="#" class="discussion-button">Find a Group</a>
+            </div>
+
+            <div class="discussion-card">
+                <div class="discussion-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="discussion-title">Counseling</h3>
+                <p class="discussion-text">Get professional support and advice from experts who are here to help you.</p>
+                <a href="#" class="discussion-button">Request Advice</a>
+            </div>
+        </div>
+
+        <div class="discussion-topics">
+            <h3>Popular Topics</h3>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Emotional Changes</h4>
+                    <p>Discussions about feelings and challenges during puberty</p>
+                    <span class="topic-stats">234 discussions • 1.2k comments</span>
+                </div>
+
+                <div class="topic-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Online Safety</h4>
+                    <p>Tips for safely using social media</p>
+                    <span class="topic-stats">156 discussions • 890 comments</span>
+                </div>
+
+                <div class="topic-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Health & Hygiene</h4>
+                    <p>Advice on maintaining health during puberty</p>
+                    <span class="topic-stats">189 discussions • 945 comments</span>
+                </div>
+
+                <div class="topic-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Peer Relationships</h4>
+                    <p>How to deal with social challenges</p>
+                    <span class="topic-stats">167 discussions • 789 comments</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coming Soon Modal -->
+    <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <div class="coming-soon-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h2>Coming Soon!</h2>
+            <p>This feature will be available soon. Stay tuned for more information! 🚀</p>
+            <button class="modal-close">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function handleNavigation(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        }
+
+        // Modal functionality
+        const modal = document.getElementById('comingSoonModal');
+        const discussionButtons = document.querySelectorAll('.discussion-button');
+        const topicCards = document.querySelectorAll('.topic-card');
+        const closeBtn = document.querySelector('.modal-close');
+
+        // Add click event to discussion buttons
+        discussionButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Add click event to topic cards
+        topicCards.forEach(card => {
+            card.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

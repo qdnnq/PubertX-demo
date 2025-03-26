@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PubertX - Registracija</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+    --primary: #9D4EFF;
+    --primary-dark: #7F3DFF;
+    --primary-light: #EEE5FF;
+    --primary-lighter: #F7F2FF;
+    --secondary: #0D0B21;
+    --text-dark: #1E1E1E;
+    --text-light: #91919F;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #FFFFFF 100%);
+    display: flex;
+    padding: 2vh 2vw;
+    gap: 2vw;
+}
+
+.left-panel {
+    flex: 1;
+    height: 96vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 32px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    padding: 4vh 3vw;
+}
+
+.left-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.brand img {
+    width: 180px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.brand h1 {
+    font-size: 2vw;
+    font-weight: 800;
+}
+
+.hero-text {
+    margin: 4vh 0;
+}
+
+.hero-text h2 {
+    font-size: 2.5vw;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 2vh;
+}
+
+.hero-text p {
+    font-size: 1.1vw;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 1.5vw;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 2vh 1.5vw;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.signup-container {
+    flex: 1;
+    height: 96vh;
+    background: var(--white);
+    border-radius: 32px;
+    padding: 4vh 3vw;
+    box-shadow: 0 20px 40px rgba(157, 78, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 4vh;
+}
+
+.welcome-text h2 {
+    font-size: 2.2vw;
+    color: var(--secondary);
+    margin-bottom: 1vh;
+    font-weight: 800;
+}
+
+.welcome-text p {
+    color: var(--text-light);
+    font-size: 1.1vw;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1.1vw;
+    color: var(--text-dark);
+    margin-bottom: 1vh;
+    font-weight: 600;
+}
+
+.input-field {
+    width: 100%;
+    height: 7vh;
+    background: var(--primary-lighter);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 0 1.5vw;
+    font-size: 1.1vw;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    outline: none;
+    box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.gender-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+    padding: 0 4vw;
+}
+
+.gender-option input {
+    display: none;
+}
+
+.gender-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5vh 1vw;
+    background: var(--primary-lighter);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1vw;
+}
+
+.gender-option input:checked + label {
+    background: var(--primary-light);
+    border: 2px solid var(--primary);
+    transform: translateY(-2px);
+}
+
+.gender-icon {
+    font-size: 2vw;
+    margin-bottom: 1vh;
+    color: var(--primary);
+}
+
+.age-slider {
+    padding: 0 1vw;
+}
+
+.age-display {
+    text-align: center;
+    font-size: 3.5vw;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 2vh;
+    transition: transform 0.3s ease;
+}
+
+.age-display::after {
+    content: attr(data-age);
+    font-size: 1.5vw;
+    margin-left: 0.5vw;
+    opacity: 0.7;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: var(--primary-light);
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 2vh 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(157, 78, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.age-marks {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+
+.age-mark {
+    font-size: 1vw;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(157, 78, 255, 0.2);
+}
+
+.login-link {
+    text-align: center;
+    font-size: 1vw;
+    color: var(--text-light);
+    margin-top: 2vh;
+}
+
+.login-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    body {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        display: none;
+    }
+
+    .signup-container {
+        width: 100%;
+    }
+
+    .welcome-text h2 {
+        font-size: 24px;
+    }
+
+    .welcome-text p,
+    .input-field,
+    .gender-option label,
+    .submit-btn {
+        font-size: 16px;
+    }
+
+    .gender-options {
+        padding: 0 2vw;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <div class="left-content">
+            <div class="brand">
+                <img src="logo.png" alt="PubertX Logo">
+                <h1>PubertX</h1>
+            </div>
+
+            <div class="hero-text">
+                <h2>Start your journey</h2>
+                <p>Join our community and explore the journey of growing up in a fun and safe way!</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Interactive learning</h3>
+                    <p>Personalized content</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Safe community</h3>
+                    <p>Connecting with other community members</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>PubertX AI</h3>
+                    <p>24/7 support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Privacy</h3>
+                    <p>100% safe and private</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="signup-container">
+        <div class="welcome-text">
+            <h2>Create an account</h2>
+            <p>Just a few steps away from your personalized learning experience!</p>
+        </div>
+
+        <form id="signupForm">
+            <div class="input-group">
+                <label for="username">How should we call you?</label>
+                <input type="text" id="username" class="input-field" placeholder="Write your username">
+            </div>
+
+            <div class="gender-options">
+                <div class="gender-option">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">
+                        <i class="fas fa-mars gender-icon"></i>
+                        Male
+                    </label>
+                </div>
+                <div class="gender-option">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">
+                        <i class="fas fa-venus gender-icon"></i>
+                        Female
+                    </label>
+                </div>
+                <div class="gender-option">
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">
+                        <i class="fas fa-genderless"></i>
+                        Other
+                    </label>
+                </div>
+            </div>
+
+            <div class="age-slider">
+                <div class="age-display" data-age="godina">16</div>
+                <input type="range" min="10" max="19" value="16" class="age-input">
+                <div class="age-marks">
+                    <span class="age-mark">10</span>
+                    <span class="age-mark">14</span>
+                    <span class="age-mark">18+</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Start your journey
+            </button>
+
+            <p class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        const ageInput = document.querySelector('.age-input');
+        const ageDisplay = document.querySelector('.age-display');
+
+        ageInput.addEventListener('input', function() {
+            let value = this.value;
+            if (value >= 18) {
+                value = "18+";
+            }
+            ageDisplay.textContent = value;
+            ageDisplay.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                ageDisplay.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>
